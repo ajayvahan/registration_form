@@ -116,44 +116,44 @@ else:
 
 if first_name in [None, '', "N/A", 'NULL','None']:
 	message=" Fill first name field"
-	fh=open('../../static/html_data/edit2.txt')
+	fh=open('/cgi-bin/task/static/html_data/edit2.txt')
 	for line in fh:
 		print ''.join(line).format(first_name,last_name,male,female,dob,mobile,single,married,student,working,not_working,address,street,city,zip_code,pk_id,image,"danger","Error!",message)
 
 elif last_name in [None, '', "N/A", 'NULL','None']:
 	message=" Fill last name field"
-	fh=open('../../static/html_data/edit2.txt')
+	fh=open('/cgi-bin/task/static/html_data/edit2.txt')
 	for line in fh:
 		print ''.join(line).format(first_name,last_name,male,female,dob,mobile,single,married,student,working,not_working,address,street,city,zip_code,pk_id,image,"danger","Error!",message)
 
 elif gender in [None, '', "N/A", 'NULL','None']:
 	message=" Fill gender field"
-	fh=open('../../static/html_data/edit2.txt')
+	fh=open('/cgi-bin/task/static/html_data/edit2.txt')
 	for line in fh:
 		print ''.join(line).format(first_name,last_name,male,female,dob,mobile,single,married,student,working,not_working,address,street,city,zip_code,pk_id,image,"danger","Error!",message)
 
 
 elif date=='false':
 	message=" Fill date of birth in YYYY-MM-DD format"
-	fh=open('../../static/html_data/edit2.txt')
+	fh=open('/cgi-bin/task/static/html_data/edit2.txt')
 	for line in fh:
 		print ''.join(line).format(first_name,last_name,male,female,dob,mobile,single,married,student,working,not_working,address,street,city,zip_code,pk_id,image,"danger","Error!",message)
 
 elif phone in [None, '', "N/A", 'NULL','None']:
 	message=" Invalid mobile number, please fill valid ten-digit mobile number"
-	fh=open('../../static/html_data/edit2.txt')
+	fh=open('/cgi-bin/task/static/html_data/edit2.txt')
 	for line in fh:
 		print ''.join(line).format(first_name,last_name,male,female,dob,mobile,single,married,student,working,not_working,address,street,city,zip_code,pk_id,image,"danger","Error!",message)
 
 elif city in [None, '', "N/A", 'NULL','None']:
 	message=" Fill city field"
-	fh=open('../../static/html_data/edit2.txt')
+	fh=open('/cgi-bin/task/static/html_data/edit2.txt')
 	for line in fh:
 		print ''.join(line).format(first_name,last_name,male,female,dob,mobile,single,married,student,working,not_working,address,street,city,zip_code,pk_id,image,"danger","Error!",message)
 
 elif zipcode in [None, '', "N/A", 'NULL','None']:
 	message=" Invalid zipcode, please fill valid six-digit zip code"
-	fh=open('../../static/html_data/edit2.txt')
+	fh=open('/cgi-bin/task/static/html_data/edit2.txt')
 	for line in fh:
 		print ''.join(line).format(first_name,last_name,male,female,dob,mobile,single,married,student,working,not_working,address,street,city,zip_code,pk_id,image,"danger","Error!",message)
 
@@ -166,14 +166,14 @@ else:
 		db.commit()
 
 		# message="Successfully Updated"
-		# fh=open('../../static/html_data/edit2.txt')
+		# fh=open('/cgi-bin/task/static/html_data/edit2.txt')
 		# for line in fh:
 		# 	print ''.join(line).format(first_name,last_name,male,female,dob,mobile,single,married,student,working,not_working,address,street,city,zip_code,pk_id,image,"success","Success!",message)
 
 
 		
 	except Exception as e:
-		fh=open('../../static/html_data/message.txt')
+		fh=open('/cgi-bin/task/static/html_data/message.txt')
 		for line in fh:
 			print ''.join(line).format("Oops... Error",e)
 
@@ -186,8 +186,8 @@ else:
 		fn = os.path.basename(fileitem.filename)
 		# writing the file to the server directory
 		unique_name=uuid.uuid4().fields[0]
-		open('../../static/images/{0}{1}'.format(unique_name,fn), 'wb').write(fileitem.file.read())
-		path="/static/images/{0}{1}".format(unique_name,fn)
+		open('/cgi-bin/task/static/images/{0}{1}'.format(unique_name,fn), 'wb').write(fileitem.file.read())
+		path="/cgi-bin/task/static/images/{0}{1}".format(unique_name,fn)
 
 		# storing the image path to database
 		try:
@@ -195,7 +195,7 @@ else:
 			cursor.execute(sql_image)
 			db.commit()
 			message="Successfully Updated the details and uploaded the image"
-			fh=open('../../static/html_data/edit2.txt')
+			fh=open('/cgi-bin/task/static/html_data/edit2.txt')
 			for line in fh:
 				print ''.join(line).format(first_name,last_name,male,female,dob,mobile,single,married,student,working,not_working,address,street,city,zip_code,pk_id,image,"success","Success!",message)
 
@@ -205,20 +205,20 @@ else:
 		except Exception as e:
 			db.rollback()
 			message=e
-			fh=open('../../static/html_data/edit2.txt')
+			fh=open('/cgi-bin/task/static/html_data/edit2.txt')
 			for line in fh:
 				print ''.join(line).format(first_name,last_name,male,female,dob,mobile,single,married,student,working,not_working,address,street,city,zip_code,pk_id,image,"success","Success!",message)
 
 
 
-			fh=open('../../static/html_data/message.txt')
+			fh=open('/cgi-bin/task/static/html_data/message.txt')
 			for line in fh:
 				print ''.join(line).format("Error in uploading image",e)
 
 
 	else:
 		message="Successfully Updated"
-		fh=open('../../static/html_data/edit2.txt')
+		fh=open('/cgi-bin/task/static/html_data/edit2.txt')
 		for line in fh:
 			print ''.join(line).format(first_name,last_name,male,female,dob,mobile,single,married,student,working,not_working,address,street,city,zip_code,pk_id,image,"success","Success!",message)
 

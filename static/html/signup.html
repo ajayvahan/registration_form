@@ -21,7 +21,7 @@
 		<div class="row">
 			<div class="col-md-8">
 				<div class="jumbotron">
-					<form class="form-horizontal" action="../../cgi-bin/app/signup.py" role="form" method="post">
+					<form class="form-horizontal" name="myFrom" action="/cgi-bin/task/app/signup.py" onsubmit="return validate()" role="form" method="post">
 						<div class="form-group">
 							<div>
 								<label>
@@ -79,7 +79,7 @@
 									</label>
 									<div>
 										<label class="control-radio-inline">
-											<input type="radio" name="gender" value="male"checked> Male
+											<input type="radio" name="gender" value="male"> Male
 								   		</label>
 										<label class="control-radio-inline">
 											<input type="radio" name="gender" value="female"/> Female
@@ -96,7 +96,7 @@
 									<label>
 									Date of Birth
 									</label>
-							 			<input type="text" class="form-control"   placeholder="yyyy-mm-dd" name="dob" id="date" />
+							 			<input type="text" class="form-control"   placeholder="yyyy-mm-dd" name="dob" id="dob" />
 								</div>
 								
 							</div>
@@ -157,6 +157,7 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript" src="../js/validate.js"></script>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
 <script src="../js/jquery.min.js"></script>
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->

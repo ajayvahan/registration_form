@@ -46,22 +46,22 @@ try:
 				image=row[8]
 		
 
-			fh=open('../../static/html_data/profile.txt')
+			fh=open('/cgi-bin/task/static/html_data/profile.txt')
 			for line in fh:
 				print ''.join(line).format(first_name,last_name,username,gender,dob,email,mobile,pk_id,image)
 		else:
-			fh=open('../../static/html_data/login_message.txt')
+			fh=open('/cgi-bin/task/static/html_data/login_message.txt')
 			for line in fh:
 				print ''.join(line).format("Your account is not active")
 			
 	else:
-		fh=open('../../static/html_data/login_error.txt')
+		fh=open('/cgi-bin/task/static/html_data/login_error.txt')
 		for line in fh:
 			print ''.join(line)
 			
 		
 except Exception as e:
-	fh=open('../../static/html_data/login_message.txt')
+	fh=open('/cgi-bin/task/static/html_data/login_message.txt')
 	for line in fh:
 		print ''.join(line).format(e)
 

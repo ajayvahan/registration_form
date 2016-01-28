@@ -5,8 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<title>Profile page</title>
-	<link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../../static/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="/cgi-bin/task/static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/cgi-bin/task/static/css/custom.css">
 
  	</head>
 <body>
@@ -55,7 +55,7 @@
 								<li class="divider">
 								</li>
 								<li>
-									<a href="../../static/html/login.html">Log out</a>
+									<a href="/cgi-bin/task/static/html/login.html">Log out</a>
 								</li>
 							</ul>
 						</li>
@@ -85,7 +85,7 @@
 
 
 			<!-- <div class="jumbotron"> -->
-					<form class="form-horizontal" enctype="multipart/form-data" action="edit2.py" role="form" method="post">
+					<form class="form-horizontal" enctype="multipart/form-data" name="myFrom" onsubmit="return edit_validate()" action="edit2.py" role="form" method="post">
 						<div class="col-md-12">
 				<div class="page-header">
 					<h2>Edit your profile</h2>
@@ -137,7 +137,7 @@
 									<label>
 									Date of Birth
 									</label>
-							 			<input type="date" class="form-control"  name="dob" value="{4}" id="date"/>
+							 			<input type="date" class="form-control"  name="dob" value="{4}" id="dob"/>
 								</div>
 								
 							</div>
@@ -191,7 +191,7 @@
 								<div class="col-md-6 ">
 									<label>Address:</label>
 										<div class="">
-							  				<textarea class="form-control" id="last_name" name="address"  rows="" cols="">{11}</textarea>
+							  				<textarea class="form-control" id="address" name="address"  rows="" cols="">{11}</textarea>
 										</div>
 																
 								</div>
@@ -202,7 +202,7 @@
 								<div class="col-md-6 ">
 									<label>Street:</label>
 										<div>
-							  				<input type="text" class="form-control" name="street" value="{12}"id="street" placeholder="Enter Street">
+							  				<input type="text" class="form-control" name="street" value="{12}" id="street" placeholder="Enter Street">
 										</div>
 									
 								</div>
@@ -237,7 +237,7 @@
 											Upload image:
 									</label>
 									<div>
-										<input type="file" name="image"/>
+										<input type="file" id="image" name="image"/>
 										<p class="help-block">
 											This image is used as your profile picture.
 										</p>
@@ -271,11 +271,11 @@
 
 
 
-
+<script type="text/javascript" src="/cgi-bin/task/static/js/edit_validate.js"></script>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
-<script src="../../static/js/jquery.min.js"></script>
+<script src="/cgi-bin/task/static/js/jquery.min.js"></script>
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-<script src="../../static/js/bootstrap.min.js"></script>
+<script src="/cgi-bin/task/static/js/bootstrap.min.js"></script>
 
 
 </body>

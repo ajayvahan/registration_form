@@ -83,12 +83,12 @@ try:
 
 
 	
-	fh=open('../../static/html_data/edit.txt')
+	fh=open('/cgi-bin/task/static/html_data/edit.txt')
 	for line in fh:
 		print ''.join(line).format(first_name,last_name,male,female,dob,mobile,single,married,student,working,not_working,address,street,city,zip_code,pk_id,image)
 
 except Exception as e:
-	fh=open('../../static/html_data/message.txt')
+	fh=open('/cgi-bin/task/static/html_data/message.txt')
 	for line in fh:
 		print ''.join(line).format("Oops... Error",e)
 

@@ -27,13 +27,13 @@ try:
 	sql= "UPDATE user_detail SET status='active' where pk_id = {0}".format(pk_id)
 	cursor.execute(sql)
 	
-	fh=open('../../static/html_data/message.txt')
+	fh=open('/cgi-bin/task/static/html_data/message.txt')
 	for line in fh:
 		print ''.join(line).format("Your account is active",'Please <a href="http://localhost/static/html/login.html">click here</a> to continue')
 
 	db.commit()
 except Exception as e:
-	fh=open('../../static/html_data/message.txt')
+	fh=open('/cgi-bin/task/static/html_data/message.txt')
 	for line in fh:
 		print ''.join(line).format("Error in activation",e)
 
