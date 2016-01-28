@@ -25,7 +25,19 @@ path required to run in terminal:
 path reqiured to run in browser:
 ---------------------------------
 
-  http://localhost/cgi-bin/task/static/html/login.html
+   http://localhost/cgi-bin/task/static/html/login.html
+ 
+ 
+CGI configuration :-
+---------------------------------------------------
+serve-cgi-bin.conf
+
+	< Directory "/var/www/html/cgi-bin" >
+		AddHandler cgi-script .cgi .py
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Require all granted
+	< /Directory >
   
 
  
